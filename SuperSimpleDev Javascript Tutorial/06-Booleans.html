@@ -14,6 +14,17 @@
         console.log(5 == '5.00');  //True
         // the === don't do the conversion so we use it alot
         console.log(5 === '5.00'); //False
+        /*There are falsy values like
+        false   0   ''  NaN: not a number     undefined   null
+        any other value is truthy value 
+        */
+       //ternary operator
+       true ? 'truthy' : 'falsy';
+       // We use the && operator as a guard operator so if it was false it blocks the code after her
+      false && console.log('false');
+      //the or operator if it was true it block the code after her; it called the default operator
+      true || console.log('true');
+      const currency = undefined || 'USD'; 
     </script>
 </body>
 </html>
