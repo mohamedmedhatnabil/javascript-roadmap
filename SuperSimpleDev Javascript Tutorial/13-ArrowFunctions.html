@@ -8,6 +8,35 @@
 <body>
     <button onclick="" class="js-button">Click</button>
     <script>
+        //in the forEach function when we end the function the index become doesn't exist anymore
+
+        //a closure is if a function has access to a value 
+        // it will always have access to that value
+        //value gets packaged together (enclosed) with the function
+
+        //the filter function it creates a new array 
+        //and if the return = true, put value => in the new array 
+        //and if the return = false, not put value => in the new array 
+        console.log([1,-3,4].filter((value, index) => {
+           /* if(value >= 0)
+                return true;
+            else
+                return false;*/
+            return value >= 0;
+        }));
+        //map will create a new array whatefer we return => added to new array
+        //map transform the array into another array
+        console.log([1,1,3].map((value, index) => {
+            return value + 10;
+        }));
+        console.log([1,1,3].map(value => value + 10));
+        
+
+    
+
+
+        
+/*
         //it's more useful to use eventListener instead of onclick
         const buttonElement = document.querySelector('.js-button');
         const evenListener = () => {
@@ -21,9 +50,9 @@
         buttonElement.addEventListener('click', () => {
             console.log('Button clicked twice'); 
         });
-        
+*/        
 
-        /*
+    /*
         const arrowFunction = () =>  {
             console.log('Arrow function called');
         };
@@ -52,7 +81,7 @@
        };
        object2.method2();
        object2.method();
-       */
+    */
         /*
        Arrow functions can be used in place of function expressions.
        Arrow functions don't have their own this keyword, they inherit this from the enclosing scope.
