@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Arrow Functions</title>
+</head>
+<body>
+    <button onclick="" class="js-button">Click</button>
+    <script>
+        //it's more useful to use eventListener instead of onclick
+        const buttonElement = document.querySelector('.js-button');
+        const evenListener = () => {
+            console.log('Button clicked'); 
+        };
+        //the addEventListener make us apple to add multiple event listenrs for one event
+        buttonElement.addEventListener('click', evenListener);
+        //we can remove an event listener
+        
+        buttonElement.removeEventListener('click', evenListener);
+        buttonElement.addEventListener('click', () => {
+            console.log('Button clicked twice'); 
+        });
+        
+
+        /*
+        const arrowFunction = () =>  {
+            console.log('Arrow function called');
+        };
+        arrowFunction();
+        const oneParam = param => {
+            console.log(param + 1);
+        };
+        oneParam(2);
+        const oneLine = () => 2 + 3;
+        console.log(oneLine());
+        ['Make dinner','Wash dishes','Eat dinner'].forEach((value, index) => {
+        if(value === 'Wash dishes'){
+            //it do the same as continue in the for loop
+            return;
+        }
+        console.log(index);
+        console.log(value);
+       });
+       const object2 = {
+        method: () => {
+            console.log('arrow method called');
+        },
+        method2() {
+            console.log('shorthand method');
+        }
+       };
+       object2.method2();
+       object2.method();
+       */
+        /*
+       Arrow functions can be used in place of function expressions.
+       Arrow functions don't have their own this keyword, they inherit this from the enclosing scope.
+       Arrow Function Context: The greet method is defined as an arrow function. It uses this.name,
+       but since arrow functionsdo not have their own this, it will not refer to the person object.
+       Instead, it refers to the this value of the outerscope, which is likely window in a browser
+       environment or undefined in strict mode.
+       Problem: As a result, this.name inside the greet function will be undefined, leading to
+       the output: Hello, my name is undefined!.
+       const person = {
+            name: 'John',
+            age: 30,
+            greet: () => {
+                console.log(`Hello, my name is ${this.name}!`);
+            }
+       };
+       person.greet();
+       // Outputs: Hello, my name is John!
+       */
+
+    </script>
+</body>
+</html>
