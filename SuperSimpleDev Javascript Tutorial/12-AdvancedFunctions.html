@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Advanced Functions</title>
+</head>
+<body>
+    
+    <script>
+        /*
+        function greeting() {
+            console.log('hello');
+        }
+        greeting();
+        //functions are also values so that it can be saved in a variable
+        //function without a name is called anonymous function
+        const function1 = function () { 
+            console.log('hello1');
+        };
+        console.log(function1);
+        function1(); // it will call the function
+        const object1 = {
+            name : 'mohamed',
+            funn : function greeting(){
+                console.log('hello2');
+            }
+        } 
+        object1.funn();
+        function display(param) {
+            console.log(param);
+        }
+        display(10);
+        function run (param) {
+            param();
+        }
+        //param is called a callback function
+        run(function param(){
+            console.log('hello3');
+        })
+        */
+        //it's a build-in function we give it a function and it call it after the time we choose
+        // the  time is in millesecond 3000 = 1 second
+        setTimeout(function(){
+            console.log('timeout');
+        },3000 );
+        //asynchronous code means that the computer won't wait for a line to finish before going to the next line
+        console.log('next line');
+        //the setInterval() runs the function every 3 seconds 
+        setInterval(function() {
+            console.log('interval');
+        },3000);
+    </script>
+</body>
+</html>
