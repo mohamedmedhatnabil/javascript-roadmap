@@ -38,7 +38,7 @@
         run(function param(){
             console.log('hello3');
         })
-        */
+        
         //it's a build-in function we give it a function and it call it after the time we choose
         // the  time is in millesecond 3000 = 1 second
         setTimeout(function(){
@@ -50,6 +50,17 @@
         setInterval(function() {
             console.log('interval');
         },3000);
+        // clearInterval() stops the setInterval() function
+        */
+       //forEach allows us to loop through the array and display each value of the array 
+       ['Make dinner','Wash dishes','Eat dinner'].forEach(function (value, index){
+        if(value === 'Wash dishes'){
+            //it do the same as continue in the for loop
+            return;
+        }
+        console.log(index);
+        console.log(value);
+       })
     </script>
 </body>
 </html>
