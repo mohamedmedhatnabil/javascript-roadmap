@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>DOM-CSS</title>
+    <title>Auto Play</title>
     <style>
         body{
             text-align: center;
@@ -29,6 +29,7 @@
 
             document.querySelector('.js-moves').innerHTML = '';
     ">Reset Score</button>
+    <button onclick="autoplay();">Auto Play</button>
 <script>
    
 
@@ -112,7 +113,20 @@
             }
             return computerMove;
         };
-        
+        let isAutoPlay = false;
+        let intervalId;
+        function autoplay() {
+            if(!isAutoPlay) {
+                //setInterval returns a number and we can use it to stop the interval
+                intervalId = setInterval(() => {
+                playGame(pickComputerMove());
+                }, 1000); 
+                isAutoPlay = true;
+            } else {
+                clearInterval(intervalId);
+                isAutoPlay = false;
+            } 
+        }
 </script>
 </body>
 </html>
