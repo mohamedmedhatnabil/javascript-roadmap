@@ -1,15 +1,22 @@
 const promiseOne = new Promise((resolve, reject) => {
-    resolve('promise one is resolved')});
+    setTimeout(() => {
+        resolve('promise one resolved')
+    },2000);
+});
 const promiseTwo = new Promise((resolve, reject) => {
-    resolve('promise two is resolved');
+    setTimeout(() => {
+        resolve('promise two resolved')
+    },1500);
 });
 const promiseThree = new Promise((resolve, reject) => {
-    reject('promise three is rejected');
+    setTimeout(() => {
+        resolve('promise three resolved')
+    },500);
 });
-promiseOne.then((value) => {
-    console.log(value);});
-    promiseTwo.then((value) => {
-        console.log(value);});
-    promiseThree.catch((err) => {
-        console.log(err);
+Promise.all([promiseOne, promiseTwo, promiseThree]).then((data) => {
+    console.log(data);
+}).catch((err) => {
+    console.log(err);
 })
+/*We use this method to make sure all the requests were resolved because when one promise
+ is rejected it will show me the rejected one and when all the requests is resolved it show me that all is resolved */
