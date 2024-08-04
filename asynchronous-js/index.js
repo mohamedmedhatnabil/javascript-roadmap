@@ -1,22 +1,53 @@
-const promiseOne = new Promise((resolve, reject) => {
-    setTimeout(() => {
-        resolve('promise one resolved')
-    },2000);
-});
-const promiseTwo = new Promise((resolve, reject) => {
-    setTimeout(() => {
-        resolve('promise two resolved')
-    },1500);
-});
-const promiseThree = new Promise((resolve, reject) => {
-    setTimeout(() => {
-        resolve('promise three resolved')
-    },500);
-});
-Promise.all([promiseOne, promiseTwo, promiseThree]).then((data) => {
-    console.log(data);
-}).catch((err) => {
-    console.log(err);
-})
-/*We use this method to make sure all the requests were resolved because when one promise
- is rejected it will show me the rejected one and when all the requests is resolved it show me that all is resolved */
+//Promises Async - Await
+
+const preHeatOven = () => {
+    return new Promise((resolve, reject) => {
+        setTimeout(() => {
+            const preHeatOven = true;
+            if(preHeatOven){
+                resolve('Oven is 180deg')
+            } else {
+                reject('Task one failed')
+            }
+        }, 1000);
+    }) 
+};
+const addSugarAndChocoChips = () => {
+    return new Promise((resolve, reject) => {
+        setTimeout(() => {
+            const chocoAdded = true;
+            if(chocoAdded){
+                resolve('Sugar and choco added')
+            } else {
+                reject('Task two failed')
+            }
+        }, 1000);
+    }) 
+};
+const bakeMixture = () => {
+    return new Promise((resolve, reject) => {
+        setTimeout(() => {
+            const bakeMixtured = true;
+            if(bakeMixtured){
+                resolve('Bake is mixtured successfully')
+            } else {
+                reject('Task three failed')
+            }
+        }, 1000);
+    }) 
+};
+
+const bakeChocolateBrownies = async () => {
+    try {
+        const preHeatResult = await preHeatOven();
+            console.log(preHeatResult);
+        const sugarAndChocoResult = await addSugarAndChocoChips();
+            console.log(sugarAndChocoResult);
+        const bakeMixtureResult = await bakeMixture();
+            console.log(bakeMixtureResult);
+        console.log('Brownies are ready');
+    } catch (error) {
+        console.error(error);
+    }
+}
+bakeChocolateBrownies();
