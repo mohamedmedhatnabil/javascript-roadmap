@@ -7,13 +7,9 @@ const promiseThree = new Promise((resolve, reject) => {
     reject('promise three is rejected');
 });
 promiseOne.then((value) => {
-    console.log(value);
-    return promiseTwo;
+    console.log(value);});
+    promiseTwo.then((value) => {
+        console.log(value);});
+    promiseThree.catch((err) => {
+        console.log(err);
 })
-.then((value) => {
-    console.log(value);
-    return promiseThree;
-})
-.catch((err) => {
-    console.log(err)
-});
