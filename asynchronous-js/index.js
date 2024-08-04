@@ -1,10 +1,11 @@
-fetch('https://dummyjson.com/products/add', {
-    method: 'POST', 
+fetch('https://dummyjson.com/products/1', {
+    method: 'PUT', 
     headers: {
         'content-type': 'application/json'
     },
     body: JSON.stringify({
-       description: 'Iphone 19',
+       title: 'Iphone 19',
+       description: 'Changed to Iphone 19',
        price: '1000',
        rating: '9/10'
     })
